@@ -1,5 +1,4 @@
 import React from 'react'
-import { findDOMNode } from 'react-dom'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import dragula from 'react-dragula'
@@ -37,7 +36,7 @@ class TaskList extends React.Component {
     }
 
     // handler to change the task order within a courier tasklist
-    let drake = dragula([ this.refs.taskList ], {
+    dragula([ this.refs.taskList ], {
       // You can set accepts to a method with the following signature: (el, target, source, sibling).
       // It'll be called to make sure that an element el, that came from container source,
       // can be dropped on container target before a sibling element.
@@ -179,7 +178,7 @@ class TaskList extends React.Component {
             role="button"
             data-toggle="collapse"
             data-target={ '#' + collabsableId }
-            aria-expanded={ collapsed ? "false" : "true" }
+            aria-expanded={ collapsed ? 'false' : 'true' }
           >
             <img src={ window.AppData.Dashboard.avatarURL.replace('__USERNAME__', username) } width="20" height="20" /> 
             <a
@@ -189,7 +188,7 @@ class TaskList extends React.Component {
               &nbsp;&nbsp;
               <span className="badge">{ tasks.length }</span>
               &nbsp;&nbsp;
-              <i className={ collapsed ? "fa fa-caret-down" : "fa fa-caret-up" }></i>
+              <i className={ collapsed ? 'fa fa-caret-down' : 'fa fa-caret-up' }></i>
             </a>
           </h3>
         </div>

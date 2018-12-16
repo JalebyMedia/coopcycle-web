@@ -149,9 +149,8 @@ class RulePickerLine extends React.Component {
         <select onChange={this.handleValueChange} value={this.state.value} className="form-control input-sm">
           <option value="">-</option>
           { this.props.rulePicker.props.zones.map((item, index) => {
-              return (<option value={item} key={index}>{item}</option>)
-            }
-          )}
+            return (<option value={item} key={index}>{item}</option>)
+          })}
         </select>
       )
     // vehicle
@@ -203,9 +202,8 @@ class RulePickerLine extends React.Component {
               <select value={this.state.operator} onChange={this.onOperatorSelect} className="form-control input-sm">
                 <option value="">-</option>
                 { typeToOperators[this.state.type].map(function(operator, index) {
-                    return (<option key={index} value={operator}>{operator}</option>)
-                  })
-                }
+                  return (<option key={index} value={operator}>{operator}</option>)
+                })}
               </select>
             )
           }

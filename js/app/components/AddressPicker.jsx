@@ -67,7 +67,7 @@ class AddressPicker extends React.Component {
     this.input.focus()
   }
 
-  onAddressSelect(value, placeId) {
+  onAddressSelect(value) {
 
     this.setState({ value })
 
@@ -90,7 +90,7 @@ class AddressPicker extends React.Component {
           })
         }
       }
-    );
+    )
   }
 
   render () {
@@ -102,7 +102,7 @@ class AddressPicker extends React.Component {
           onSelect={this.onAddressSelect}
           searchOptions={autocompleteOptions}
           highlightFirstSuggestion={true}>
-          {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+          {({ getInputProps, suggestions, getSuggestionItemProps }) => (
             <div className="form-group input-location-wrapper">
               <input
                 ref={ input => { this.input = input } }
@@ -118,12 +118,12 @@ class AddressPicker extends React.Component {
                   {suggestions.map(suggestion => {
                     const className = suggestion.active
                       ? 'location-result location-result--active'
-                      : 'location-result';
+                      : 'location-result'
                     return (
                       <div {...getSuggestionItemProps(suggestion, { className })}>
                         <span>{suggestion.description}</span>
                       </div>
-                    );
+                    )
                   })}
                   <div className="autocomplete-footer">
                     <div>
@@ -141,7 +141,7 @@ class AddressPicker extends React.Component {
           </button>
         )}
       </div>
-    );
+    )
   }
 }
 
