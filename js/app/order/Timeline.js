@@ -6,7 +6,7 @@ import TimelineStep from './TimelineStep'
 
 moment.locale($('html').attr('lang'))
 
-export default class extends React.Component {
+export default class extends Component {
 
   constructor(props) {
     super(props)
@@ -122,7 +122,7 @@ export default class extends React.Component {
 
   render () {
 
-    const { order, step } = this.state
+    const { order } = this.state
 
     const deliveryMoment = moment(order.shippedAt)
     const deliveryTime = deliveryMoment.format('LT')
@@ -131,9 +131,9 @@ export default class extends React.Component {
 
     let message
     if (deliveryIsToday) {
-      message = i18n.t("ORDER_FOLLOW_DELIVERY_EXPECTED_AT", { deliveryTime: deliveryTime })
+      message = i18n.t('ORDER_FOLLOW_DELIVERY_EXPECTED_AT', { deliveryTime: deliveryTime })
     } else {
-      message = i18n.t("ORDER_FOLLOW_DELIVERY_EXPECTED_AT_WITH_DATE", {
+      message = i18n.t('ORDER_FOLLOW_DELIVERY_EXPECTED_AT_WITH_DATE', {
         deliveryTime: deliveryTime,
         deliveryDate: formattedDeliveryDate
       })

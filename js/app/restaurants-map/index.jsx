@@ -1,9 +1,8 @@
-import MapHelper from '../MapHelper'
+import _ from 'lodash'
+import L from 'leaflet-providers'
+import BeautifyMarker from 'beautifymarker'
 
-var _ = require('lodash')
-var L = require('leaflet-providers')
-var Polyline = require('@mapbox/polyline')
-require('beautifymarker')
+import MapHelper from '../MapHelper'
 
 var COLORS = {
   TURQUOISE: '#1ABC9C',

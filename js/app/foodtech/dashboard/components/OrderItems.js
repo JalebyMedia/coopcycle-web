@@ -1,6 +1,5 @@
 import React from 'react'
 import { translate } from 'react-i18next'
-import _ from 'lodash'
 
 const hasAdjustments = (item) => item.adjustments.hasOwnProperty('menu_item_modifier') && item.adjustments['menu_item_modifier'].length > 0
 
