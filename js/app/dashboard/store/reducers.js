@@ -175,6 +175,8 @@ const unassignedTasks = (state = unassignedTasksInitial, action) => {
       newState = state.slice(0)
       return Array.prototype.concat(newState, [ action.task ])
     }
+    break
+
   case 'ASSIGN_TASKS':
     newState = state.slice(0)
     newState = _.differenceWith(
@@ -377,21 +379,21 @@ const positions = (state = [], action) => {
   switch (action.type) {
   case 'SET_GEOLOCATION':
 
-      const marker = {
-        username: action.username,
-        coords: action.coords,
-        lastSeen: moment()
-      }
+    const marker = {
+      username: action.username,
+      coords: action.coords,
+      lastSeen: moment()
+    }
 
-      const newState = state.slice(0)
-      const index = _.findIndex(newState, position => position.username === action.username)
-      if (-1 !== index) {
-        newState.splice(index, 1, marker)
-      } else {
-        newState.push(marker)
-      }
+    const newState = state.slice(0)
+    const index = _.findIndex(newState, position => position.username === action.username)
+    if (-1 !== index) {
+      newState.splice(index, 1, marker)
+    } else {
+      newState.push(marker)
+    }
 
-      return newState
+    return newState
 
   default:
 
@@ -420,6 +422,7 @@ const offline = (state = [], action) => {
 
       return state.concat([ action.username ])
     }
+    break
 
   default:
 

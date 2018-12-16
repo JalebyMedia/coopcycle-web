@@ -125,8 +125,7 @@ window.CoopCycle.TaskModal = (formName, tagsURL) => {
                       $('.modal-dialog').addClass('modal--shake')
                     }
                   })
-                }
-
+              }
 
             }
           })

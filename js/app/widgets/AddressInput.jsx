@@ -27,15 +27,15 @@ export default function(el, options) {
   const autocomplete = new google.maps.places.Autocomplete(el, mapsOptions)
 
   if (options.hasOwnProperty('onLoad') && typeof options.onLoad === 'function') {
-      options.onLoad()
-    }
+    options.onLoad()
+  }
 
   autocomplete.addListener('place_changed', function() {
 
     const place = autocomplete.getPlace()
 
     if (!place.geometry) {
-      return;
+      return
     }
 
     if (options.elements.hasOwnProperty('latitude')) {
