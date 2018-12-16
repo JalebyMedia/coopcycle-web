@@ -1,11 +1,9 @@
-import React from 'react';
-import {render} from 'react-dom';
 import MapHelper from '../MapHelper'
 
-var _ = require('lodash');
-var L = require('leaflet-providers');
-var Polyline = require('@mapbox/polyline');
-require('beautifymarker');
+var _ = require('lodash')
+var L = require('leaflet-providers')
+var Polyline = require('@mapbox/polyline')
+require('beautifymarker')
 
 var COLORS = {
   TURQUOISE: '#1ABC9C',
@@ -22,7 +20,7 @@ var COLORS = {
   PUMPKIN: '#D35400',
   ALIZARIN: '#E74C3C',
   POMEGRANATE: '#C0392B',
-};
+}
 
 var infoWindows = [];
 var center = {

@@ -110,9 +110,9 @@ class CartFacade {
     return this.isInitialized
   }
 
-  _onDateChange(date) {
-    window._paq.push(['trackEvent', 'Checkout', 'changeDate']);
-    this._postCart();
+  _onDateChange() {
+    window._paq.push(['trackEvent', 'Checkout', 'changeDate'])
+    this._postCart()
   }
 
   _mapAddressToElements(address) {
@@ -125,7 +125,7 @@ class CartFacade {
 
   _onAddressChange(address) {
 
-    window._paq.push(['trackEvent', 'Checkout', 'changeAddress', address.streetAddress]);
+    window._paq.push(['trackEvent', 'Checkout', 'changeAddress', address.streetAddress])
 
     // If the address is not precise, we do not save it
     if (!address.isPrecise) {
@@ -178,8 +178,8 @@ class CartFacade {
         $.post(url, {
           quantity: quantity
         })
-        .then(res => this.handleAjaxResponse(res))
-        .fail(e => this.handleAjaxResponse(e.responseJSON))
+          .then(res => this.handleAjaxResponse(res))
+          .fail(e => this.handleAjaxResponse(e.responseJSON))
 
         clearTimeout(timeoutID)
       } else {
@@ -255,7 +255,7 @@ window.initMap = function() {
   });
 
   // Make sure all (non-additional) options have been checked
-  $('form[data-product-options] input[type="radio"]').on('change', function(e) {
+  $('form[data-product-options] input[type="radio"]').on('change', function() {
 
     var $options = $(this).closest('form').find('[data-product-option]');
     var checkedOptionsCount = 0;
@@ -271,7 +271,7 @@ window.initMap = function() {
     }
   });
 
-  $('form[data-product-options] input[type="checkbox"]').on('click', function(e) {
+  $('form[data-product-options] input[type="checkbox"]').on('click', function() {
     _paq.push(['trackEvent', 'Checkout', 'addExtra']);
   });
 
@@ -317,8 +317,8 @@ window.initMap = function() {
   CartHelper = new CartFacade({
     restaurant: restaurant,
     cart: cart,
-    datePickerDateInputName: "cart[date]",
-    datePickerTimeInputName: "cart[time]",
+    datePickerDateInputName: 'cart[date]',
+    datePickerTimeInputName: 'cart[time]',
     addressFormElements: {
       streetAddress: document.querySelector("#cart_shippingAddress_streetAddress"),
       postalCode: document.querySelector("#cart_shippingAddress_postalCode"),

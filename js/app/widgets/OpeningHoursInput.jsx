@@ -41,7 +41,5 @@ export default function(el, options) {
       el.querySelectorAll('[data-opening-hour]').forEach(input => input.remove())
       _.each(values, (value, index) => addRow(index, value))
       if (typeof options.onRowRemove === 'function') options.onRowRemove(index)
-    }} />,
-    el
-  )
+    }} />, el)
 }

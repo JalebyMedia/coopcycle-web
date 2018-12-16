@@ -8,17 +8,17 @@ const onListChange = () => {
   })
 }
 
-const drake = dragula([ document.querySelector('#preparation_time_rules_preparationTimeRules') ], {})
-.on('dragend', () => onListChange())
+dragula([ document.querySelector('#preparation_time_rules_preparationTimeRules') ], {})
+  .on('dragend', () => onListChange())
 
-$(document).on('click', '#preparation_time_rules_preparationTimeRules > div .close', function(e) {
+  $(document).on('click', '#preparation_time_rules_preparationTimeRules > div .close', function(e) {
 
-  e.preventDefault()
+    e.preventDefault()
 
-  $(e.target).closest('.preparation_time_rules_preparationTimeRule').remove()
+    $(e.target).closest('.preparation_time_rules_preparationTimeRule').remove()
 
-  onListChange()
-})
+    onListChange()
+  })
 
 $('#add-rule').on('click', (e) => {
 
