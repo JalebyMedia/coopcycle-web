@@ -12,7 +12,7 @@ function resolveProductInput(taxonId, productId) {
     .querySelector(`[data-taxon-id="${taxonId}"]`)
     .querySelector('[data-prototype]')
   return $(formContainer)
-    .find("[name$='[product]']")
+    .find('[name$="[product]"]')
     .filter((index, el) => $(el).val() === productId)
 }
 
@@ -20,10 +20,6 @@ function reorderProducts(taxonId) {
 
   const drakeContainer = document
     .querySelector(`[data-draggable-target][data-taxon-id="${taxonId}"]`)
-
-  const formContainer = childrenContainer
-    .querySelector(`[data-taxon-id="${taxonId}"]`)
-    .querySelector('[data-prototype]')
 
   const productPositions = [].slice.call(drakeContainer.children).map((el, index) => {
     return {
@@ -37,7 +33,7 @@ function reorderProducts(taxonId) {
     if (productInput) {
       $(productInput)
         .closest('div')
-        .find("[name$='[position]']")
+        .find('[name$="[position]"]')
         .val(productPosition.position)
     }
   })
@@ -45,9 +41,6 @@ function reorderProducts(taxonId) {
 }
 
 function removeProduct(taxonId, productId) {
-  const formContainer = childrenContainer
-    .querySelector(`[data-taxon-id="${taxonId}"]`)
-    .querySelector('[data-prototype]')
   const productInput = resolveProductInput(taxonId, productId)
   if (productInput) {
     $(productInput).closest('div').remove()
@@ -83,10 +76,10 @@ const drake = dragula(containers)
       const $form = $(form)
 
       $form
-        .find("[name$='[product]']")
+        .find('[name$="[product]"]')
         .val(productId)
       $form
-        .find("[name$='[position]']")
+        .find('[name$="[position]"]')
         .val(index + 1)
 
       $(formContainer).append($form)
