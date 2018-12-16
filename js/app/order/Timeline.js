@@ -35,52 +35,52 @@ export default class extends React.Component {
 
   renderEvent(event, key) {
     switch (event.name) {
-      case 'order:created':
-        return (
-          <TimelineStep
-            success
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_CREATED_TITLE', { date: moment(event.createdAt).format('LT') }) } />
-        )
-      case 'order:accepted':
-        return (
-          <TimelineStep
-            success
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_ACCEPTED_TITLE', { date: moment(event.createdAt).format('LT') }) }
-            description={ 'Description' } />
-        )
-      case 'order:refused':
-        return (
-          <TimelineStep
-            danger
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_REFUSED_TITLE', { date: moment(event.createdAt).format('LT') }) }
-            description={ 'Description' } />
-        )
-      case 'order:cancelled':
-        return (
-          <TimelineStep
-            danger
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_CANCELLED_TITLE', { date: moment(event.createdAt).format('LT') }) } />
-        )
-      case 'order:picked':
-        return (
-          <TimelineStep
-            success
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_PICKED_TITLE', { date: moment(event.createdAt).format('LT') }) }
-            description={ 'Description' } />
-        )
-      case 'order:dropped':
-        return (
-          <TimelineStep
-            success
-            key={ key }
-            title={ i18n.t('ORDER_TIMELINE_DROPPED_TITLE', { date: moment(event.createdAt).format('LT') }) }
-            description={ 'Description' } />
-        )
+    case 'order:created':
+      return (
+        <TimelineStep
+          success
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_CREATED_TITLE', { date: moment(event.createdAt).format('LT') }) } />
+      )
+    case 'order:accepted':
+      return (
+        <TimelineStep
+          success
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_ACCEPTED_TITLE', { date: moment(event.createdAt).format('LT') }) }
+          description={ 'Description' } />
+      )
+    case 'order:refused':
+      return (
+        <TimelineStep
+          danger
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_REFUSED_TITLE', { date: moment(event.createdAt).format('LT') }) }
+          description={ 'Description' } />
+      )
+    case 'order:cancelled':
+      return (
+        <TimelineStep
+          danger
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_CANCELLED_TITLE', { date: moment(event.createdAt).format('LT') }) } />
+      )
+    case 'order:picked':
+      return (
+        <TimelineStep
+          success
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_PICKED_TITLE', { date: moment(event.createdAt).format('LT') }) }
+          description={ 'Description' } />
+      )
+    case 'order:dropped':
+      return (
+        <TimelineStep
+          success
+          key={ key }
+          title={ i18n.t('ORDER_TIMELINE_DROPPED_TITLE', { date: moment(event.createdAt).format('LT') }) }
+          description={ 'Description' } />
+      )
     }
   }
 
@@ -90,24 +90,24 @@ export default class extends React.Component {
     const last = _.last(events)
 
     switch (last.name) {
-      case 'order:created':
-        return (
-          <TimelineStep active
-            title={ i18n.t('ORDER_TIMELINE_AFTER_CREATED_TITLE') }
-            description={ i18n.t('ORDER_TIMELINE_AFTER_CREATED_DESCRIPTION') } />
-        )
-      case 'order:accepted':
-        return (
-          <TimelineStep active
-            title={ i18n.t('ORDER_TIMELINE_AFTER_ACCEPTED_TITLE') }
-            description={ i18n.t('ORDER_TIMELINE_AFTER_ACCEPTED_DESCRIPTION') } />
-        )
-      case 'order:picked':
-        return (
-          <TimelineStep active
-            title={ i18n.t('ORDER_TIMELINE_AFTER_PICKED_TITLE') }
-            description={ i18n.t('ORDER_TIMELINE_AFTER_PICKED_DESCRIPTION') } />
-        )
+    case 'order:created':
+      return (
+        <TimelineStep active
+          title={ i18n.t('ORDER_TIMELINE_AFTER_CREATED_TITLE') }
+          description={ i18n.t('ORDER_TIMELINE_AFTER_CREATED_DESCRIPTION') } />
+      )
+    case 'order:accepted':
+      return (
+        <TimelineStep active
+          title={ i18n.t('ORDER_TIMELINE_AFTER_ACCEPTED_TITLE') }
+          description={ i18n.t('ORDER_TIMELINE_AFTER_ACCEPTED_DESCRIPTION') } />
+      )
+    case 'order:picked':
+      return (
+        <TimelineStep active
+          title={ i18n.t('ORDER_TIMELINE_AFTER_PICKED_TITLE') }
+          description={ i18n.t('ORDER_TIMELINE_AFTER_PICKED_DESCRIPTION') } />
+      )
     }
   }
 

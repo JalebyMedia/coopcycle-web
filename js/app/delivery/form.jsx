@@ -34,22 +34,22 @@ function refreshRouting() {
     [ pickup.getLatLng().lat, pickup.getLatLng().lng ],
     [ dropoff.getLatLng().lat, dropoff.getLatLng().lng ]
   ])
-  .then(route => {
+    .then(route => {
 
-    var duration = parseInt(route.duration, 10);
-    var distance = parseInt(route.distance, 10);
+      var duration = parseInt(route.duration, 10);
+      var distance = parseInt(route.distance, 10);
 
-    var kms = (distance / 1000).toFixed(2);
-    var minutes = Math.ceil(duration / 60);
+      var kms = (distance / 1000).toFixed(2);
+      var minutes = Math.ceil(duration / 60);
 
-    $('#delivery_distance').text(kms + ' Km');
-    $('#delivery_duration').text(minutes + ' min');
+      $('#delivery_distance').text(kms + ' Km');
+      $('#delivery_duration').text(minutes + ' min');
 
-    enableForm()
+      enableForm()
 
-    // return decodePolyline(data.routes[0].geometry);
-  })
-  .catch(e => enableForm())
+      // return decodePolyline(data.routes[0].geometry);
+    })
+    .catch(e => enableForm())
 }
 
 const markerIcons = {

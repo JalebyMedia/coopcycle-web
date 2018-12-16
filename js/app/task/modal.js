@@ -55,20 +55,20 @@ window.CoopCycle.TaskModal = (formName, tagsURL) => {
       itemColor: item => {
         const eventName = item.getAttribute('data-event')
         switch (eventName) {
-          case 'task:done':
-            return 'green'
-          case 'task:failed':
-          case 'task:cancelled':
-            return 'red'
-          default:
-            return 'blue'
+        case 'task:done':
+          return 'green'
+        case 'task:failed':
+        case 'task:cancelled':
+          return 'red'
+        default:
+          return 'blue'
         }
       }
     })
   }
 
   if (tags.length === 0) {
-    fetch(tagsURL, { credentials: 'include' }).then(res => {
+    fetch(tagsURL, { credentials: 'include' }).then(res => {
       res.json()
         .then(data => tags = data)
         .then(() => initTagSelector(formName))
@@ -91,7 +91,7 @@ window.CoopCycle.TaskModal = (formName, tagsURL) => {
         // We add the name of the button that was actually clicked
         data.push({
           name: $(e.target).attr('name'),
-          value: ""
+          value: ''
         })
 
         fetch($form.attr('action'), {
