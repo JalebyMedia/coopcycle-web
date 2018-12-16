@@ -35,6 +35,23 @@ Encore
     resolveUrlLoader: false
   })
 
+  .enableEslintLoader((options) => {
+    options.env = {
+      browser: true
+    }
+    options.extends = 'eslint:recommended'
+    options.rules = {
+      indent: [ 'error', 2 ],
+      semi: [ 'error', 'never' ]
+    }
+    options.plugins = [
+      'react'
+    ]
+    // options.globals = {
+    //     '$': true
+    // }
+  })
+
   .configureFilenames({
     images: 'img/build/[name].[hash:8].[ext]'
   })
