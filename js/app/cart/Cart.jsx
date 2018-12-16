@@ -307,7 +307,7 @@ class Cart extends React.Component
   }
 
   closeAddressModal() {
-    this.setState({ addressModalIsOpen: false });
+    this.setState({ addressModalIsOpen: false })
   }
 
   afterOpenRestaurantModal() {
