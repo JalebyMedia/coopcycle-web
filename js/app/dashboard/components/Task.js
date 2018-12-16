@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { translate } from 'react-i18next'
 import moment from 'moment'
 import { ContextMenuTrigger } from 'react-contextmenu'

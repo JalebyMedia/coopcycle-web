@@ -39,10 +39,21 @@ Encore
     options.env = {
       browser: true
     }
-    options.extends = 'eslint:recommended'
+    options.extends = [
+      'eslint:recommended',
+      'plugin:react/recommended'
+    ]
+    options.parserOptions = {
+      ecmaFeatures: {
+        jsx: true
+      },
+      ecmaVersion: 2018
+    }
     options.rules = {
       indent: [ 'error', 2 ],
-      semi: [ 'error', 'never' ]
+      semi: [ 'error', 'never' ],
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
     }
     options.plugins = [
       'react'
